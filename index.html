@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title> Quizze Time </title>
+</head>
+<body>
+    <div class="container">
+        <div class="MyQuizApp">
+            <div class="img-container">
+                <img src="./Assets/Question.svg" id="question-img">
+                <img src="./Assets/winner.svg" id="winner-img">
+            </div>
+            <div class="body-container">
+                <div class="heading-text">
+                    <h2> Quizze Time </h2>
+                    <p> Quizze Time is a MCQ quiz for testing your knowledge in CS fundamentals. </p>
+                </div>
+                <div class="heading-text">
+                    <p> Enter your Name </p>
+                    <h2> 
+                        <input type="text" class="input-field" id="user-name" placeholder="Name" 
+                        title="Enter atleast 3 letters" onchange="validateName()">
+                    </h2>
+                </div>
+                <div class="firstPageButton">
+                    <button> Next </button>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="heading-text">
+                    <h2> Welcome </h2>
+                    <p id="welcome-user"> 
+                    </p>
+                </div>
+                <div class="heading-text">
+                    <p> Enter your Email </p>
+                    <h2> 
+                        <input type="email" class="input-field" id="user-email" placeholder="email" required>
+                    </h2>
+                </div>
+                <div class="heading-text">
+                    <p> Enter your Address </p>
+                    <h2> 
+                        <input type="text" class="input-field" id="user-address" placeholder="address" required>
+                    </h2>
+                </div>
+                <div class="heading-text">
+                    <p> Enter your DOB </p>
+                    <h2> 
+                        <input type="date" class="input-field" id="user-dob" required>
+                    </h2>
+                </div>
+                <div class="Buttons">
+                    <button class="prev-btn"> Back </button>
+                    <button class="next-btn"> Start Quiz 
+                    </button>
+                </div>
+            </div>
+
+            <div class="quiz-container">
+                <header class="QuestionsHeader">
+                    <div class="title">Quizze Time</div>
+            
+                    <div class="TimeCount">
+                        <div class="TimeLeft">Time Left</div>
+                        <div class="Seconds"> 300 </div>
+                    </div>
+            
+                    <div class="time_lines"></div>
+                </header>
+                <hr>
+                <form>
+                    <div class="questions-container">
+                        <div class="que-box">
+                            <h3 id="que1"> 1). What is JavaScript ? 
+                            </h3>
+                            <div class="options">
+                                <div class="options-list">
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-1" id="opt-1A" class="opt-1" value="a"> 
+                                        <label for="opt-1A"> 
+                                            Option A 
+                                        </label>
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-1" id="opt-1B" class="opt-1" value="b"> 
+                                        <label for="opt-1B"> 
+                                            Option B
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="options-list">
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-1" id="opt-1C" class="opt-1" value="c"> 
+                                        <label for="opt-1C"> 
+                                            Option C 
+                                        </label>
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-1" id="opt-1D" class="opt-1" value="d"> 
+                                        <label for="opt-1D"> 
+                                            Option D 
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="que-box">
+                            <h3 id="que2"> 1). What is JavaScript ? 
+                            </h3>
+                            <div class="options">
+                                <div class="options-list">
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-2" id="opt-2A" class="opt-2" value="a"> 
+                                        <label for="opt-2A"> 
+                                            Option A 
+                                        </label> 
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-2" id="opt-2B" class="opt-2" value="b"> 
+                                        <label for="opt-2B"> 
+                                            Option B 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="options-list">
+                                <div class="options-element">
+                                        <input type="radio" name="opt-2" id="opt-2C" class="opt-2" value="c"> 
+                                        <label for="opt-2C"> 
+                                            Option C 
+                                        </label>
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-2" id="opt-2D" class="opt-2" value="d"> 
+                                        <label for="opt-2D"> 
+                                            Option D 
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="que-box">
+                            <h3 id="que3"> 1). What is JavaScript ? 
+                            </h3>
+                            <div class="options">
+                                <div class="options-list">
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-3" id="opt-3A" class="opt-3" value="a"> 
+                                        <label for="opt-3A"> 
+                                            Option A 
+                                        </label>
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-3" id="opt-3B" class="opt-3" value="b"> 
+                                        <label for="opt-3B"> 
+                                            Option B 
+                                        </label> 
+                                    </div>
+                                </div>
+                                <div class="options-list">
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-3" id="opt-3C" class="opt-3" value="c"> 
+                                        <label for="opt-3C"> 
+                                            Option C 
+                                        </label> 
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-3" id="opt-3D" class="opt-3" value="d"> 
+                                        <label for="opt-3D"> 
+                                            Option D 
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="que-box">
+                            <h3 id="que4"> 1). What is JavaScript ? 
+                            </h3>
+                            <div class="options">
+                                <div class="options-list">
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-4" id="opt-4A" class="opt-4" value="a"> 
+                                        <label for="opt-4A"> 
+                                            Option A 
+                                        </label>  
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-4" id="opt-4B" class="opt-4" value="b"> 
+                                        <label for="opt-4B"> 
+                                            Option B 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="options-list">
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-4" id="opt-4C" class="opt-4" value="c"> 
+                                        <label for="opt-4C"> 
+                                            Option C 
+                                        </label>
+                                    </div>
+                                    <div class="options-element">
+                                        <input type="radio" name="opt-4" id="opt-4D" class="opt-4" value="d"> 
+                                        <label for="opt-4D"> 
+                                            Option D 
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="Buttons">
+                    <button class="prev-btn" onClick="previousPage()"> Prev </button>
+                    <button class="next-btn" onClick="submitQuiz()"> Next
+                    </button>
+                </div>
+            </div>
+
+            <div class="result-container">
+                <img src="./Assets/win.gif" class="win-gif">
+                <div class="result-text">
+                    <h1 id="result-caption"> </h1>
+                    <h2 id="result-score"> </h2>
+                </div>
+                <div class="Buttons">
+                    <button class="prev-btn" onClick="exitQuiz()"> Exit Quiz </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./app.js"> </script>
+</body>
+</html>
